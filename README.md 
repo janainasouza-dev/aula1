@@ -1,0 +1,17 @@
+# 🎓 Sistema de Matrícula - API Backend
+
+## 📋 Descrição
+API REST para sistema de matrículas com Node.js, Express e PostgreSQL.
+
+## 🚀 Como executar
+
+### Pré-requisitos
+- Docker instalado
+- Docker Compose
+
+### Passos
+
+1. Clone o repositório
+2. Execute o comando:
+```bash
+docker compose up -d --buil
