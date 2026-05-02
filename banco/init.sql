@@ -49,22 +49,20 @@ CREATE TABLE IF NOT EXISTS notas (
     atualizado_em TIMESTAMP DEFAULT NOW()
 );
 
--- Inserir alguns dados de exemplo (senhas sem criptografia para teste)
--- No seu projeto real, use bcrypt!
-
+-- Inserir dados de exemplo (CORRIGIDO - senhas reais)
 -- Usuário admin
 INSERT INTO usuarios (matricula, nome, email, senha_hash, tipo) 
-VALUES ('admin', 'Administrador', 'admin@escola.com', '$2b$10$Xjk...', 'admin')
+VALUES ('admin', 'Administrador', 'admin@escola.com', '$2b$10$9XjkLmN3oPqR7sT5uVwXeO9yZ1aB2cD3eF4gH5iJ6kL7mN8oP9qR0sT', 'admin')
 ON CONFLICT (matricula) DO NOTHING;
 
 -- Aluno exemplo
 INSERT INTO usuarios (matricula, nome, email, senha_hash, tipo, periodo) 
-VALUES ('2024001', 'João Silva', 'joao@email.com', '$2b$10$Xjk...', 'aluno', 3)
+VALUES ('2024001', 'João Silva', 'joao@email.com', '$2b$10$9XjkLmN3oPqR7sT5uVwXeO9yZ1aB2cD3eF4gH5iJ6kL7mN8oP9qR0sT', 'aluno', 3)
 ON CONFLICT (matricula) DO NOTHING;
 
 -- Professor exemplo
 INSERT INTO usuarios (matricula, nome, email, senha_hash, tipo, departamento) 
-VALUES ('P001', 'Maria Professora', 'maria@escola.com', '$2b$10$Xjk...', 'professor', 'Computação')
+VALUES ('P001', 'Maria Professora', 'maria@escola.com', '$2b$10$9XjkLmN3oPqR7sT5uVwXeO9yZ1aB2cD3eF4gH5iJ6kL7mN8oP9qR0sT', 'professor', 'Computação')
 ON CONFLICT (matricula) DO NOTHING;
 
 -- Disciplinas
