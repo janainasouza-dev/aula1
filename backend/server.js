@@ -145,6 +145,23 @@ app.get('/health', async (req, res) => {
   }
 });
 
+// rota adicionada por correção 
+
+app.get('/health/api', async (req, res) => {
+  try {
+    await query('SELECT 1');
+    res.json({ 
+      sucesso: true, 
+      mensagem: "API de saúde está funcionando",
+      timestamp: new Date().toISOString()
+    });
+  } catch (err) {
+    res.status(500).json({ 
+      sucesso: false, 
+      mensagem: "Erro na conexão com o banco" 
+    });
+  }
+});
 
 // ============================================================
 // ROTAS DE AUTENTICAÇÃO (/api/auth)
